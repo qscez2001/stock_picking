@@ -1,0 +1,78 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <p>先選擇日期：</p>
+    <form action="/draw" method="post">
+      <div class="input-group">
+        <label for="birthday">Date:</label>
+        <input type="date" id="date" name="date">
+      </div>
+
+      <label for="group_name">再選擇條件：</label>
+
+      <div class="form-check">
+          <input class="form-check-input" type="radio" name="group_name" value="本益比" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            本益比 小於 15 倍
+          </label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="radio" name="group_name" value="股價淨值比">
+          <label class="form-check-label" for="exampleRadios1">
+            股價淨值比 小於 1.2 倍
+          </label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="radio" name="group_name" value="殖利率(%)">
+          <label class="form-check-label" for="exampleRadios1">
+            殖利率 大於 5 %
+          </label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="radio" name="group_name" value="上月比較增減(%)">
+          <label class="form-check-label" for="exampleRadios1">
+            月營收 比上個月 成長 20 ％
+          </label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="radio" name="group_name" value="去年同月增減(%)">
+          <label class="form-check-label" for="exampleRadios1">
+            月營收(單月) 年成長率 大於 20 ％
+          </label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="radio" name="group_name" value="前期比較增減(%)">
+          <label class="form-check-label" for="exampleRadios1">
+            月營收(累計) 年成長率 大於 20 ％
+          </label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="radio" name="group_name" value="三大法人買賣超股數">
+          <label class="form-check-label" for="exampleRadios1">
+            三大法人買賣超股數 前 150 名
+          </label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="radio" name="group_name" value="成交金額">
+          <label class="form-check-label" for="exampleRadios1">
+            成交金額 前 150 名
+          </label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="radio" name="group_name" value="連續上漲3天">
+          <label class="form-check-label" for="exampleRadios1">
+            收盤價 連續上漲 3 天
+          </label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="radio" name="group_name" value="ALL">
+          <label class="form-check-label" for="exampleRadios1">
+            全部
+          </label>
+      </div>
+      <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+</div>
+{% endblock content %}

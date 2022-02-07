@@ -1,0 +1,11 @@
+<!-- templates/draw.html -->
+{% extends "base.html" %}
+{% block title %}篩選結果{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1>篩選結果</h1>
+    <!-- <p>{{ id }}（公司名稱：{{ name }}）</p> -->
+    {{res_table | safe}}
+</div>
+{% endblock content %}

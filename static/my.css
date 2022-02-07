@@ -1,0 +1,12 @@
+.my_body {
+  background: black;
+  background-image:url(ui/01.png);
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+}
+
+.right {
+  position:absolute;
+  right:0px;
+}
